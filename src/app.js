@@ -19,9 +19,55 @@ function ponerFicha(fila, columna, jugador) {
         tablero[fila][columna] = jugador;
     else
         throw new Error("Casilla ya ocupada");
+
+    redibujarTablero();
 }
 
 
+
+const imagenes = [
+    "img/hueco.svg",
+    "img/circulo.svg",
+    "img/cruz.svg"
+];
+
+function redibujarTablero() {
+    for (let fila = 0; fila < tablero.length; fila++) {
+        for (let columna = 0; columna < tablero[fila].length; columna++) {            
+            document.getElementById("c-"+fila+"-"+columna).setAttribute("src", imagenes[tablero[fila][columna]])
+        }        
+    }
+}
+
+
+
+function jugar(fila, columna) {
+    try {
+        ponerFicha(fila, columna, 1)
+
+        jugarMaquina()
+    } catch(err) {
+        alert(err.message)
+    }
+}
+
+
+function jugarMaquina() {
+    p = mejorJugada(tablero);
+    ponerFicha(p.fila, p.columna, 2);
+    redibujarTablero();
+}
+
+
+function mejorJugada(t) {
+    for (let i = 0; i < t.length; i++) {
+        for (let j = 0; j < t[i].length; j++) {
+            if (t[i][j]==0) return {fila:i, columna:j}
+        }
+    }
+}
+
 module.exports = {
-    ponerFicha
+    ponerFicha,
+    jugar
 }
