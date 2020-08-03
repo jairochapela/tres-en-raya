@@ -1,0 +1,29 @@
+{
+  "name": "tres-en-raya",
+  "version": "1.0.0",
+  "description": "Juego de Tres en Raya",
+  "main": "webpack.config.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12",
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "juego",
+    "tres-en-raya"
+  ],
+  "author": "Jairo Chapela-Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jairochapela/tres-en-raya/issues"
+  },
+  "homepage": "https://github.com/jairochapela/tres-en-raya#readme"
+}

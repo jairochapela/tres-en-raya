@@ -20,3 +20,8 @@ function ponerFicha(fila, columna, jugador) {
     else
         throw new Error("Casilla ya ocupada");
 }
+
+
+module.exports = {
+    ponerFicha
+}
