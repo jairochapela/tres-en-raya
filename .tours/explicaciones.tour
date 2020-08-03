@@ -1,0 +1,10 @@
+{
+  "title": "Explicaciones",
+  "steps": [
+    {
+      "file": "public/index.html",
+      "line": 9,
+      "description": "Para generar la tabla con Emmet:\n\ntable#tablero>tr.fila*3>td.celda*3"
+    }
+  ]
+}
