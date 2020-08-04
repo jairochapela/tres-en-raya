@@ -31,10 +31,16 @@ const imagenes = [
     "img/cruz.svg"
 ];
 
+/**
+ * Redibuja el tablero, actualizando su aspecto según el estado reflejado
+ * en tablero.
+ */
 function redibujarTablero() {
     for (let fila = 0; fila < tablero.length; fila++) {
         for (let columna = 0; columna < tablero[fila].length; columna++) {            
-            document.getElementById("c-"+fila+"-"+columna).setAttribute("src", imagenes[tablero[fila][columna]])
+            document
+                .getElementById("c-"+fila+"-"+columna)
+                .setAttribute("src", imagenes[tablero[fila][columna]])
         }        
     }
 }
@@ -79,5 +85,6 @@ function mejorJugada(t) {
 
 module.exports = {
     ponerFicha,
-    mejorJugada
+    mejorJugada,
+    jugar
 }
