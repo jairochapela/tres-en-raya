@@ -59,15 +59,22 @@ function jugarMaquina() {
 }
 
 
+
+
+
+
+/**
+ * Calcula la mejor jugada y retorna un objeto {fila, columna} con
+ * la posición resultante.
+ * @param {*} t Estado del tablero.
+ */
 function mejorJugada(t) {
-    for (let i = 0; i < t.length; i++) {
-        for (let j = 0; j < t[i].length; j++) {
-            if (t[i][j]==0) return {fila:i, columna:j}
-        }
-    }
+    let fila = 0
+    let columna = 0
+    return {fila, columna}
 }
 
 module.exports = {
     ponerFicha,
-    jugar
+    mejorJugada
 }
