@@ -69,9 +69,12 @@ function jugarMaquina() {
  * @param {*} t Estado del tablero.
  */
 function mejorJugada(t) {
-    let fila = 0
-    let columna = 0
-    return {fila, columna}
+    for (let fila = 0; fila < 3; fila++) {
+        for (let columna = 0; columna < 3; columna++) {
+            if (t[fila][columna] == 0)
+                return {fila, columna}
+        }
+    }
 }
 
 module.exports = {

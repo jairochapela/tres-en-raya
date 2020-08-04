@@ -32,4 +32,15 @@ describe("Mejor jugada", function () {
         assert.equal(fila, 1)
         assert.equal(columna, 1)
     })
+
+    it ("Todo ocupado excepto (0,2)", function () {
+        const tablero = [
+            [2, 1, 0],
+            [1, 1, 2],
+            [2, 2, 1]
+        ]
+        let {fila, columna} = mejorJugada(tablero)
+        assert.equal(fila, 0)
+        assert.equal(columna, 2)
+    })
 })
