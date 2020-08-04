@@ -46,11 +46,15 @@ function redibujarTablero() {
 }
 
 
-
+/**
+ * Acción de jugar lanzada por el usuario. Coloca la ficha en el tablero,
+ * invoca la jugada de la máquina y actualiza el estado.
+ * @param {*} fila Fila donde coloca su ficha.
+ * @param {*} columna Columna donde coloca su ficha.
+ */
 function jugar(fila, columna) {
     try {
         ponerFicha(fila, columna, 1)
-
         jugarMaquina()
     } catch(err) {
         alert(err.message)
