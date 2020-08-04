@@ -87,8 +87,19 @@ function mejorJugada(t) {
     }
 }
 
+/**
+ * Comprueba si en el tablero t hay un ganador. Esta función devolverá
+ * 1 ó 2 dependiendo de si gana el usuario o la máquina, o 0 si todavía
+ * no ha ganado nadie.
+ * @param {*} t Estado del tablero.
+ */
+function ganador(t) {
+    return 0;
+}
+
 module.exports = {
     ponerFicha,
     mejorJugada,
-    jugar
+    jugar,
+    ganador
 }
