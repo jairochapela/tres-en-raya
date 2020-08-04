@@ -55,7 +55,13 @@ function redibujarTablero() {
 function jugar(fila, columna) {
     try {
         ponerFicha(fila, columna, 1)
+        if (ganador(tablero)) {
+            alert("Enhorabuena! Has ganado!")
+            return
+        }
         jugarMaquina()
+        if (ganador(tablero))
+            alert("Lo siento, has perdido.")
     } catch(err) {
         alert(err.message)
     }
