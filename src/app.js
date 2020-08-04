@@ -58,14 +58,14 @@ function jugar(fila, columna) {
 }
 
 
+/**
+ * Jugada hecha por la máquina.
+ */
 function jugarMaquina() {
-    p = mejorJugada(tablero);
-    ponerFicha(p.fila, p.columna, 2);
+    let {fila, columna} = mejorJugada(tablero);
+    ponerFicha(fila, columna, 2);
     redibujarTablero();
 }
-
-
-
 
 
 
