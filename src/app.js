@@ -139,9 +139,28 @@ function ganador(tablero) {
     return 0 
 }
 
+/**
+ * Reinicia el juego, vaciando todo el tablero y volviendo a activar
+ * el juego.
+ */
+function reset() {
+    if (confirm("Está a punto de reiniciar la partida.")) {
+        tablero = [
+            [0,0,0],
+            [0,0,0],
+            [0,0,0]
+        ]
+
+        finalJuego = false
+
+        redibujarTablero()
+    }
+}
+
 module.exports = {
     ponerFicha,
     mejorJugada,
     jugar,
-    ganador
+    ganador,
+    reset
 }
