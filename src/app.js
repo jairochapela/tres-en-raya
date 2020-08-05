@@ -157,7 +157,7 @@ function reset() {
     }
 }
 
-module.exports = {
+export default {
     ponerFicha,
     mejorJugada,
     jugar,

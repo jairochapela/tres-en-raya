@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^7.6.0",
     "mocha": "^8.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
@@ -13,7 +14,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint src/*.js"
   },
   "keywords": [
     "webpack",
