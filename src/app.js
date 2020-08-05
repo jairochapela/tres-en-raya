@@ -8,6 +8,13 @@ var tablero = [
 ]
 
 /**
+ * Variable que controla el final de juego. Incialmente vale false, lo 
+ * que significa que el juego aún no ha acabado.
+ */
+var finalJuego = false
+
+
+/**
  * Función para colocar una ficha en la posición
  * indicada para el jugador en cuestión.
  * @param {*} fila 
@@ -15,6 +22,9 @@ var tablero = [
  * @param {*} jugador (puede ser 1 ó 2)
  */
 function ponerFicha(fila, columna, jugador) {
+    if (finalJuego)
+        throw new Error("El juego ya ha terminado");
+
     if (tablero[fila][columna] == 0)
         tablero[fila][columna] = jugador;
     else
@@ -57,16 +67,23 @@ function jugar(fila, columna) {
         ponerFicha(fila, columna, 1)
         if (ganador(tablero)) {
             alert("Enhorabuena! Has ganado!")
+            finalizarJuego()
             return
         }
         jugarMaquina()
-        if (ganador(tablero))
+        if (ganador(tablero)) {
             alert("Lo siento, has perdido.")
+            finalizarJuego()
+        }
     } catch(err) {
         alert(err.message)
     }
 }
 
+
+function finalizarJuego() {
+    finalJuego = true
+}
 
 /**
  * Jugada hecha por la máquina.
